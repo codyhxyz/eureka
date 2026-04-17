@@ -32,7 +32,7 @@ Claude Code's main agent will automatically delegate to it when these patterns a
 Add this repository as a plugin marketplace, then install:
 
 ```bash
-/plugin marketplace add ydoc5212/experimental-engineer
+/plugin marketplace add codyhxyz/experimental-engineer
 /plugin install experimental-engineer@experimental-engineer
 ```
 
@@ -42,7 +42,7 @@ Drop the agent file into your user agents directory:
 
 ```bash
 mkdir -p ~/.claude/agents
-curl -fsSL https://raw.githubusercontent.com/ydoc5212/experimental-engineer/main/agents/experimental-engineer.md \
+curl -fsSL https://raw.githubusercontent.com/codyhxyz/experimental-engineer/main/agents/experimental-engineer.md \
   -o ~/.claude/agents/experimental-engineer.md
 ```
 
