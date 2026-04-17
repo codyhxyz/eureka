@@ -56,28 +56,11 @@ Once installed, Claude Code will recommend `experimental-engineer` automatically
 
 > "Spawn experimental-engineer to find a wilder approach to this rendering bottleneck."
 
-## Example interactions
+## Examples
 
-**Performance bottleneck**
+> **Example 1:** "Our tree view is lagging with 10k+ nodes. Standard virtualization isn't cutting it." — The agent returns three approaches ordered conservative → wild: (1) move layout to a Web Worker to kill main-thread jank, (2) replace the recursive tree with a flat indexed array + parent pointers for cache-friendly traversal (~10× faster), (3) render the entire tree to a GPU-accelerated `<canvas>` (1M nodes at 60fps). Each comes with trade-offs and a pick-#2 recommendation for highest leverage × lowest blast radius.
 
-> **You:** Our tree view is lagging with 10k+ nodes. Standard virtualization isn't cutting it.
->
-> **experimental-engineer:** Three approaches, ordered conservative → wild:
-> 1. **Move the layout calculation to a Web Worker.** Keeps your current architecture, eliminates main-thread jank.
-> 2. **Replace the recursive tree with a flat indexed array + parent pointers.** Cache-friendly, lets you use SIMD-style batched updates. ~10× faster traversal in my benchmarks.
-> 3. **Render the entire tree to a single `<canvas>` via a GPU-accelerated layout.** You lose accessibility for free text, but you can paint 1M nodes at 60fps.
->
-> Want me to prototype #2? It's the highest leverage with the lowest blast radius.
-
-**Architectural rethink**
-
-> **You:** Our sync queue keeps growing more complex. Maybe there's a different way?
->
-> **experimental-engineer:** What if you didn't have a queue? Two options:
-> 1. **Event sourcing with a CRDT.** The "queue" becomes an append-only log; conflicts resolve mathematically. You delete ~80% of the reconciliation code.
-> 2. **Operation-based sync over a single WebSocket subscription.** Server is the source of truth; clients are projections. Eliminates the queue entirely and gives you real-time as a side effect.
->
-> Both are big rewrites. Pick #1 if offline-first matters; #2 if real-time matters.
+> **Example 2:** "Our sync queue keeps growing more complex. Maybe there's a completely different way?" — The agent challenges the queue's existence: (1) event sourcing with a CRDT — the "queue" becomes an append-only log, conflicts resolve mathematically, you delete ~80% of reconciliation code; (2) operation-based sync over a single WebSocket subscription — server is the source of truth, clients are projections, real-time becomes a side effect. Honest about the rewrite cost and helps pick based on whether offline-first or real-time matters more.
 
 ## Design philosophy
 
