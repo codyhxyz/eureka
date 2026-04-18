@@ -1,7 +1,7 @@
 # Evals
 
-A manual regression harness for the `experimental-engineer` agent. Use it when
-you edit `agents/experimental-engineer.md` and want to eyeball whether the
+A manual regression harness for the `iconoclast` agent. Use it when
+you edit `agents/iconoclast.md` and want to eyeball whether the
 output quality held.
 
 ## Purpose
@@ -20,9 +20,8 @@ by hand when the prompt changes.
 
 1. Pick a fixture file (e.g., `02-log-ingestion.md`).
 2. Copy the text under `## Prompt` (and `## Context` if present).
-3. In Claude Code, invoke the agent: either use `/experimental <paste>` once
-   that command exists, or prefix your message with
-   `"use the experimental-engineer agent to ..."`.
+3. In Claude Code, invoke the agent: either use `/iconoclast <paste>`, or
+   prefix your message with `"use the iconoclast agent to ..."`.
 4. Read the response and check it against `## Expected shape`.
 5. Scan `## Red flags` — if any apply, the prompt may have regressed.
 

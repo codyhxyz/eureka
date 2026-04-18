@@ -1,13 +1,13 @@
 {
-  "name": "experimental-engineer",
-  "description": "A Claude Code subagent that explores unconventional, first-principles solutions to hard technical problems. Channels John Carmack-style fearless engineering.",
-  "version": "0.1.0",
+  "name": "iconoclast",
+  "description": "A Claude Code subagent for when Claude is playing it safe and you need it to actually solve the problem. Pushes toward edge-of-training-data techniques instead of the obvious fix.",
+  "version": "0.3.0",
   "author": {
     "name": "Cody Hergenroeder",
     "email": "chergenroeder135@gmail.com"
   },
-  "homepage": "https://github.com/codyhxyz/experimental-engineer",
-  "repository": "https://github.com/codyhxyz/experimental-engineer",
+  "homepage": "https://github.com/codyhxyz/iconoclast",
+  "repository": "https://github.com/codyhxyz/iconoclast",
   "license": "MIT",
   "keywords": [
     "claude-code",

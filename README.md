@@ -1,12 +1,16 @@
-# experimental-engineer
+# iconoclast
 
 > A Claude Code subagent for when Claude is **playing it safe** and you need it to *actually* solve the problem. Pushes toward edge-of-training-data techniques instead of the obvious, well-trodden fix — John Carmack-style fearless engineering across any stack.
+
+<p align="center">
+  <img src="./assets/steamed-hams.gif" alt="Steamed hams" width="480">
+</p>
 
 When standard optimizations aren't cutting it, when the architecture feels fundamentally wrong, or when a feature is "working" but the code is a mess — this subagent is given explicit permission to question every assumption and propose radical rewrites, novel data structures, and approaches most engineers forget exist.
 
 ## What it does
 
-Most coding agents converge on the safe, obvious fix. When you can tell Claude is trying all the wrong things — or when "working" code is clearly the wrong shape — `experimental-engineer` is the override. It surfaces the assumptions baked into your current approach, inverts them, and builds from there — conservative to wild, reaching for techniques at the **edge of its training data**.
+Most coding agents converge on the safe, obvious fix. When you can tell Claude is trying all the wrong things — or when "working" code is clearly the wrong shape — `iconoclast` is the override. It surfaces the assumptions baked into your current approach, inverts them, and builds from there — conservative to wild, reaching for techniques at the **edge of its training data**.
 
 It will:
 
@@ -33,8 +37,8 @@ Claude Code's main agent will automatically delegate to it when these patterns a
 Add this repository as a plugin marketplace, then install:
 
 ```bash
-/plugin marketplace add codyhxyz/experimental-engineer
-/plugin install experimental-engineer@experimental-engineer
+/plugin marketplace add codyhxyz/iconoclast
+/plugin install iconoclast@iconoclast
 ```
 
 ### Manual install
@@ -43,19 +47,25 @@ Drop the agent file into your user agents directory:
 
 ```bash
 mkdir -p ~/.claude/agents
-curl -fsSL https://raw.githubusercontent.com/codyhxyz/experimental-engineer/main/agents/experimental-engineer.md \
-  -o ~/.claude/agents/experimental-engineer.md
+curl -fsSL https://raw.githubusercontent.com/codyhxyz/iconoclast/main/agents/iconoclast.md \
+  -o ~/.claude/agents/iconoclast.md
 ```
 
 Restart Claude Code and the agent will appear in the `Task` tool's `subagent_type` options.
 
 ## Usage
 
-Once installed, Claude Code will recommend `experimental-engineer` automatically when your request matches its triggers. You can also invoke it explicitly:
+Once installed, Claude Code will recommend `iconoclast` automatically when your request matches its triggers. You can also invoke it explicitly:
 
-> "Use the experimental-engineer agent to rethink how our sync queue works."
+> "Use the iconoclast agent to rethink how our sync queue works."
 
-> "Spawn experimental-engineer to find a wilder approach to this rendering bottleneck."
+> "Spawn iconoclast to find a wilder approach to this rendering bottleneck."
+
+Or, if the plugin-scoped slash command is installed:
+
+```
+/iconoclast our tree view is choking at 10k nodes — standard virtualization isn't cutting it
+```
 
 ## Examples
 
@@ -65,7 +75,7 @@ Once installed, Claude Code will recommend `experimental-engineer` automatically
 
 > **Example 3:** "Our log ingestion pipeline can't keep up with burst traffic — it's choking at ~200k events/sec and we're dropping data." — The agent identifies three assumptions: that logs are parsed at ingest time, that each event is individually acknowledged, that storage is row-oriented. Approach A: move parsing to query time, ingest raw bytes — removes the CPU bottleneck immediately. Approach B: batch acknowledgment with a ring buffer between intake and the writer, amortizing syscall overhead. Approach C (inverts assumption 3): switch to a columnar append-only format (Parquet-style) — compression ratios improve 5–10×, scan queries become trivially parallelizable with SIMD. Recommendation: ship A now, plan C for the next quarter.
 
-> **Example 4:** "This test passes locally but fails in CI 30% of the time — we've tried everything." — The main agent keeps patching symptoms (longer timeouts, retries, more mocks). `experimental-engineer` names the hidden assumption instead: that the test's clock and the framework's fake-timer clock are the same clock. Inverting it — instrument wall-clock and monotonic time at every await point — exposes two timer systems advancing in different domains, a race invisible to every "obvious" fix. Root cause found in one pass because it stopped asking *"what fix do I apply?"* and started asking *"what am I assuming is true?"*
+> **Example 4:** "This test passes locally but fails in CI 30% of the time — we've tried everything." — The main agent keeps patching symptoms (longer timeouts, retries, more mocks). `iconoclast` names the hidden assumption instead: that the test's clock and the framework's fake-timer clock are the same clock. Inverting it — instrument wall-clock and monotonic time at every await point — exposes two timer systems advancing in different domains, a race invisible to every "obvious" fix. Root cause found in one pass because it stopped asking *"what fix do I apply?"* and started asking *"what am I assuming is true?"*
 
 ## Design philosophy
 
@@ -73,11 +83,11 @@ This agent exists because most LLM-driven engineering converges on the same safe
 
 **Why it works:** LLMs have a strong prior toward the most common solution for any given problem shape. That prior is useful 90% of the time and catastrophic the other 10%. Explicitly licensing the weird answer doesn't make the model smarter — it gives it permission to surface options it already knows but wouldn't otherwise volunteer.
 
-It's not for every task. Use the standard agents for bug fixes and small features. Use this one when you've already tried the obvious thing and it didn't work.
+It's not for every task. Use the standard agents for bug fixes and small features. Use this one when you've already tried the obvious thing and it didn't work — and you need an iconoclast on the other side of the terminal.
 
 ## Contributing
 
-Issues and pull requests welcome. If you have a great example of `experimental-engineer` solving a real problem, open an issue and I'll add it to this README.
+Issues and pull requests welcome. If you have a great example of `iconoclast` solving a real problem, open an issue and I'll add it to this README.
 
 ## License
 

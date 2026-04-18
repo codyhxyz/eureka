@@ -1,7 +1,7 @@
 {
-  "name": "experimental-engineer",
+  "name": "iconoclast",
   "metadata": {
-    "description": "Single-plugin marketplace for the experimental-engineer subagent."
+    "description": "Single-plugin marketplace for the iconoclast subagent."
   },
   "owner": {
     "name": "Cody Hergenroeder",
@@ -9,9 +9,9 @@
   },
   "plugins": [
     {
-      "name": "experimental-engineer",
-      "description": "A Claude Code subagent that explores unconventional, first-principles solutions to hard technical problems.",
-      "version": "0.1.0",
+      "name": "iconoclast",
+      "description": "A Claude Code subagent for when Claude is playing it safe and you need it to actually solve the problem.",
+      "version": "0.3.0",
       "source": "./",
       "author": {
         "name": "Cody Hergenroeder",
