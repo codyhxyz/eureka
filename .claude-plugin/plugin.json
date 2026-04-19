@@ -1,6 +1,6 @@
 {
   "name": "eureka",
-  "description": "A Claude Code subagent for when Claude is trying all the wrong things. Use it when you need Claude to think outside the box.",
+  "description": "A subagent for when Claude is trying all the wrong things. Use it when you need Claude to think outside the box.",
   "version": "0.4.0",
   "author": {
     "name": "Cody Hergenroeder",

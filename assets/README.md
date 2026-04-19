@@ -1,10 +1,8 @@
 # assets
 
-Drop a Steamed Hams image/gif at `./steamed-hams.gif` (or `.jpg`/`.png`) and it'll appear in the repo README.
+The hero GIF shown at the top of the repo README lives at `../docs/hero.gif`.
+To regenerate it, run `vhs docs/demo.tape` from the repo root (requires
+[VHS](https://github.com/charmbracelet/vhs) and ffmpeg). The tape and its
+deterministic session script live in `../docs/`.
 
-Suggested clips to grab:
-- The "Aurora Borealis" exchange (peak Skinner)
-- The "delightfully devilish, Seymour" moment
-- The flaming kitchen reveal
-
-Any still frame or short looping gif works. Keep it under ~2 MB so the README loads fast. If you change the filename, update the `![...](./assets/...)` line in the top-level `README.md` to match.
+This directory is for any other static marketing assets (e.g. `og.png`).

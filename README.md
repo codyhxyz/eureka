@@ -3,7 +3,7 @@
 > A subagent for when Claude is **trying all the wrong things**. Use it when you need Claude to think outside the box. This is my "eureka" plugin, my #1 most helpful plugin in daily use.
 
 <p align="center">
-  <img src="./assets/steamed-hams.gif" alt="Steamed hams" width="480">
+  <img src="./docs/hero.gif" alt="eureka surfacing assumptions and three approaches for a laggy tree view" width="900">
 </p>
 
 Most coding agents loop on the same three hypotheses until you give up. When standard optimizations aren't working, when the architecture feels wrong but you can't say why, or when the code "works" but the shape is off, `eureka` is the override. It has explicit permission to question the assumptions you didn't know you were making and propose rewrites the main agent would never volunteer.
