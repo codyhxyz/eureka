@@ -1,5 +1,9 @@
 # eureka
 
+<p align="center">
+  <a href="https://github.com/codyhxyz/codyhxyz-plugins"><img src="https://img.shields.io/badge/part_of-codyhxyz--plugins-ffd900?logo=github&logoColor=000" alt="Part of codyhxyz-plugins"></a>
+</p>
+
 > A subagent for when Claude is **trying all the wrong things**. Use it when you need Claude to think outside the box. This is my "eureka" plugin, my #1 most helpful plugin in daily use.
 
 <p align="center">
@@ -40,6 +44,8 @@ Add this repo as a plugin marketplace, then install:
 /plugin marketplace add codyhxyz/eureka
 /plugin install eureka@eureka
 ```
+
+See the full [codyhxyz-plugins marketplace](https://github.com/codyhxyz/codyhxyz-plugins) for my other plugins.
 
 ### Manual install
 
@@ -92,3 +98,7 @@ Issues and PRs welcome. If you've used `eureka` on a real problem and it worked,
 ## License
 
 [MIT](LICENSE) © 2026 Cody Hergenroeder
+
+---
+
+<sub>Part of <a href="https://github.com/codyhxyz/codyhxyz-plugins"><b>codyhxyz-plugins</b></a> 🍋 — my registry of Claude Code plugins.</sub>
